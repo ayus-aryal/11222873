@@ -2,7 +2,6 @@
 
 A minimalistic frontend-only URL shortener built with React. It generates short links and stores mappings in `localStorage`.
 
----
 
 ## ✨ Features
 
@@ -11,7 +10,6 @@ A minimalistic frontend-only URL shortener built with React. It generates short 
 - Redirects to the original URL when visiting the short link
 - Clean UI with no backend required
 
----
 
 ## 🧪 Demo
 

@@ -4,8 +4,9 @@ import Redirect from './Redirect';
 
 function App() {
   const shortId = window.location.pathname.substring(1);
+
   return (
-    <div style={{ textAlign: 'center', padding: '2rem' }}>
+    <div className="container">
       {shortId ? <Redirect shortId={shortId} /> : <Shortener />}
     </div>
   );

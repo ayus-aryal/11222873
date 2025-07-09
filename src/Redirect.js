@@ -1,15 +1,19 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { getFromStorage } from './utils';
 
 export default function Redirect({ shortId }) {
+  const [message, setMessage] = useState('Redirecting...');
+
   useEffect(() => {
-    const longUrl = getFromStorage(shortId);
-    if (longUrl) {
-      window.location.href = longUrl;
+    const result = getFromStorage(shortId);
+    if (!result) {
+      setMessage('Link not found.');
+    } else if (result.expired) {
+      setMessage('This link has expired.');
     } else {
-      alert('URL not found!');
+      window.location.href = result.url;
     }
   }, [shortId]);
 
-  return <p>Redirecting...</p>;
+  return <p>{message}</p>;
 }
